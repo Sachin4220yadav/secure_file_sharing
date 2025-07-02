@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: file-sharing-api
+    env: python
+    buildCommand: pip install -r requirements-legacy.txt
+    startCommand: python app.py
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 5000
